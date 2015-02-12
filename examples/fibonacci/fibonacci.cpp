@@ -28,13 +28,11 @@
 // compute Fibonacci numbers
 
 #include <hpx/hpx_main.hpp>
+#include <hpx/include/lcos.hpp>
 
 #include <iostream>
 
 #include "fibonacci.hpp"
-
-// let's use a large type to store fib numbers
-typedef unsigned long long fib_type;
 
 // the actual step code computing the fib numbers goes here
 int fib_step::execute(int const& tag, fib_context& ctxt) const
@@ -45,8 +43,8 @@ int fib_step::execute(int const& tag, fib_context& ctxt) const
     default:
         {
             // get previous 2 results
-            hpx::dataflow(
-                [tag](hpx::future<fib_type> f1, hpx::future<fib_type> f2)
+            hpx::lcos::local::dataflow(
+                [tag, &ctxt](hpx::future<fib_type> f1, hpx::future<fib_type> f2)
                 {
                     // put our result
                     ctxt.fibs_.put(tag, f1.get() + f2.get());

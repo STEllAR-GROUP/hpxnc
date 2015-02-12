@@ -31,6 +31,10 @@ namespace hpxnc
     {
     public:
         template <typename Derived>
+        explicit item_collection (context<Derived> &ctxt)
+        {
+        }
+        template <typename Derived>
         item_collection (context<Derived> &ctxt, std::string const& name)
         {
         }

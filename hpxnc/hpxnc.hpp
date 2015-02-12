@@ -8,6 +8,9 @@
 
 #include <hpxnc/config.hpp>
 #include <hpxnc/context.hpp>
+
 #include <hpxnc/item_collection.hpp>
+#include <hpxnc/step_collection.hpp>
+#include <hpxnc/tag_collection.hpp>
 
 #endif

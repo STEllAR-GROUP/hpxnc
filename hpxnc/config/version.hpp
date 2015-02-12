@@ -22,7 +22,7 @@
 #define HPXNC_VERSION_MINOR        0
 #define HPXNC_VERSION_SUBMINOR     1
 
-#define HPX_VERSION_DATE         20150203
+#define HPXNC_VERSION_DATE         20150203
 
 namespace hpxnc
 {

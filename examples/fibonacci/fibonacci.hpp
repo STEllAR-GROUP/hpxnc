@@ -33,6 +33,9 @@
 // Forward declaration of the context class (also known as graph)
 struct fib_context;
 
+// let's use a large type to store fib numbers
+typedef unsigned long long fib_type;
+
 // The step classes
 struct fib_step
 {
