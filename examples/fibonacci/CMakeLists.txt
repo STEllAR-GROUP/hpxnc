@@ -12,12 +12,17 @@ foreach(example_program ${example_programs})
 
   source_group("Source Files" FILES ${sources})
 
+  if(MSVC)
+    hpx_add_compile_flag(-bigobj)
+  endif()
+
   # add example executable
   add_hpx_executable(
     ${example_program}
     SOURCES ${sources}
     ${${example_program}_FLAGS}
     DEPENDENCIES hpxnc_lib
+    COMPONENT_DEPENDENCIES unordered_component
     FOLDER "Examples/Fibonacci/${example_program}"
     OUTPUT_SUFFIX bin
     NOHPXINIT)

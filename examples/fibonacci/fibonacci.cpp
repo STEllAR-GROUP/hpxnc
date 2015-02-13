@@ -34,6 +34,8 @@
 
 #include "fibonacci.hpp"
 
+HPX_REGISTER_UNORDERED_MAP(int, fib_type);
+
 // the actual step code computing the fib numbers goes here
 int fib_step::execute(int const& tag, fib_context& ctxt) const
 {

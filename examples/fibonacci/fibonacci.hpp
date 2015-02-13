@@ -61,10 +61,12 @@ struct fib_context : public hpxnc::context<fib_context>
         fibs_(*this),       // Initialize each item collection
         tags_(*this)        // Initialize each tag collection
     {
-        tags_.prescribes(steps_, *this );       // Prescriptive relations
+        tags_.prescribes(steps_, *this);        // Prescriptive relations
         steps_.consumes(fibs_);                 // Consumer relations
         steps_.produces(fibs_);                 // Producer relations
     }
 };
+
+HPX_REGISTER_UNORDERED_MAP_DECLARATION(int, fib_type);
 
 #endif

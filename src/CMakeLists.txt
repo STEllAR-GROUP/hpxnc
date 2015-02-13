@@ -15,9 +15,6 @@ add_hpx_library(
   OUTPUT_SUFFIX .
   AUTOGLOB)
 
-# Don't cause our applications to link against hpx_init.
-set_target_properties(hpxnc_lib PROPERTIES LINK_INTERFACE_LIBRARIES "")
-
 set_target_properties(hpxnc_lib PROPERTIES
   VERSION ${HPXNC_VERSION}
   SOVERSION ${HPXNC_SOVERSION}
